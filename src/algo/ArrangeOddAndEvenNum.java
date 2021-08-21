@@ -5,24 +5,23 @@ package algo;//Arrange an array so that all the even numbers will move right and
 
 //1,2,6,7,9,10
 
+import java.util.Arrays;
+
 public class ArrangeOddAndEvenNum {
     public static void main(String[] args) {
-        int[] input = {3, 4, 9, 6, 7};
-        //Arrays.toString(arrangeNumbersMethod2(input));
-        arrangeNumbersMethod2(input);
-        for (int j : input) {
-            System.out.println(j);
-        }
+        int[] input = {3, 4, 9, 6, 7, 8, 6, 1, 7, 3};
+        System.out.println(Arrays.toString(ArrangeOddAndEvenNumHelper(input)));
     }
-    private static void arrangeNumbersMethod2(int[] A) {
+
+    private static int[] ArrangeOddAndEvenNumHelper(int[] A) {
         int i = 0;
-        int j = A.length-1;
+        int j = A.length - 1;
         while (i < j) {
-            while (A[i] % 2 == 0 && i < j)
+            if (A[i] % 2 == 0)
                 i++;
-            while (A[j] % 2 != 0 && i < j)
+            else if (A[j] % 2 != 0)
                 j--;
-            if (i < j) {
+            else {
                 int temp = A[i];
                 A[i] = A[j];
                 A[j] = temp;
@@ -30,7 +29,7 @@ public class ArrangeOddAndEvenNum {
                 j--;
             }
         }
-
+        return A;
     }
 
 }

@@ -7,7 +7,7 @@ import java.util.Iterator;
 //If I have a list containing [alice, bob, abigail, charlie] and I want to write
 // an iterator such that it iterates
 // over elements that begin with 'a'
-public class demoToBeDeleted {
+public class customeIterator {
     public static void main(String[] args) {
         String[] arr = new String[]{"alice", "bob", "abigail", "charlie"};
         myIterator<String> itr  = (myIterator<String>) new myIterator(arr).iterator();
